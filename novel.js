@@ -23,10 +23,10 @@
   /* ---------- 2. giscus 讨论区 ---------- */
   /* 在 https://giscus.app/zh-CN 按提示生成后，把四个值抄进来 */
   var GISCUS = {
-    repo: "YOUR_NAME/YOUR_REPO",
-    repoId: "YOUR_REPO_ID",
-    category: "Announcements",
-    categoryId: "YOUR_CATEGORY_ID",
+    data-repo="ZHG1027/array-novel"
+        data-repo-id="R_kgDOUyUBFw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOUyUBF84DGphq"
     mapping: "pathname",
     strict: "0",
     reactionsEnabled: "1",

@@ -1,0 +1,214 @@
+/* =========================================================
+   《数组那些事儿》阅读页共享样式
+   ========================================================= */
+
+:root{
+  --bg:#151619;
+  --panel:#1c1e22;
+  --text:#e6e4e0;
+  --muted:#8b8f96;
+  --line:#2b2e34;
+  --accent:#7ec3a4;
+  --on-accent:#0e1512;
+  --maxw:680px;
+}
+
+*{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- 顶部：当前标题 + 阅读进度 ---------- */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(21,22,25,.88);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+
+.topbar-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:14px 24px 0;
+}
+
+.topbar-row{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.topbar-title{
+  min-width:0;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.06em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.topbar-count{
+  flex:none;
+  font-size:12px;
+  letter-spacing:.08em;
+  color:var(--muted);
+}
+
+.progress-track{
+  margin-top:11px;
+  height:2px;
+  background:var(--line);
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  background:var(--accent);
+  transition:width .5s ease;
+}
+
+/* ---------- 正文 ---------- */
+.page{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 24px 72px;
+}
+
+.chapter{
+  padding-top:52px;
+}
+
+.chapter-title{
+  margin:0;
+  font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+  font-size:clamp(24px,6vw,30px);
+  font-weight:600;
+  letter-spacing:.09em;
+  line-height:1.45;
+}
+
+.chapter-rule{
+  width:36px;
+  margin:24px 0 34px;
+  border:0;
+  border-top:1px solid var(--line);
+}
+
+.chapter p{
+  margin:0 0 1.4em;
+  font-size:16px;
+  line-height:2.05;
+  letter-spacing:.02em;
+  text-align:justify;
+}
+
+.chapter p.note{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.chapter p.cliff{
+  margin-top:2.6em;
+  font-size:14px;
+  letter-spacing:.1em;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* ---------- 本章讨论区 ---------- */
+.discuss{
+  margin-top:60px;
+  padding-top:34px;
+  border-top:1px solid var(--line);
+}
+
+.discuss-title{
+  margin:0 0 20px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.24em;
+  color:var(--muted);
+}
+
+.giscus-wrap{ min-height:80px; }
+
+.giscus-hint{
+  padding:20px 22px;
+  border:1px dashed var(--line);
+  border-radius:12px;
+  background:var(--panel);
+  font-size:13px;
+  line-height:2;
+  color:var(--muted);
+}
+
+.giscus-hint code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12px;
+  color:var(--accent);
+}
+
+/* ---------- 上一章 / 下一章 ---------- */
+.pager{
+  display:flex;
+  gap:12px;
+  margin-top:44px;
+}
+
+.pager-btn{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 18px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:transparent;
+  color:var(--text);
+  font-family:inherit;
+  font-size:14px;
+  letter-spacing:.14em;
+  text-decoration:none;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease,opacity .2s ease;
+}
+
+.pager-btn:hover{
+  background:var(--panel);
+  border-color:var(--accent);
+  transform:translateY(-1px);
+}
+
+.pager-btn.next{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:var(--on-accent);
+  font-weight:600;
+  box-shadow:0 10px 24px -12px var(--accent);
+}
+
+.pager-btn.next:hover{ opacity:.9; }
+
+.pager-btn.is-disabled{
+  opacity:.3;
+  pointer-events:none;
+}
+
+@media (max-width:480px){
+  .topbar-inner{ padding:12px 18px 0; }
+  .page{ padding:0 18px 56px; }
+  .chapter{ padding-top:40px; }
+  .chapter p{ font-size:15.5px; }
+}

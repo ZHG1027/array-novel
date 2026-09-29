@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数组那些事儿</title>
+<meta name="description" content="连载小说《数组那些事儿》，作者 @雨^^">
+<style>
+  :root{
+    --bg:#151619;
+    --panel:#1c1e22;
+    --text:#e6e4e0;
+    --muted:#8b8f96;
+    --line:#2b2e34;
+    --accent:#7ec3a4;
+    --on-accent:#0e1512;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:36px 24px;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .cover{
+    width:100%;
+    max-width:420px;
+    text-align:center;
+    animation:fade .9s ease both;
+  }
+  @keyframes fade{
+    from{ opacity:0; transform:translateY(14px); }
+    to  { opacity:1; transform:none; }
+  }
+
+  .kicker{
+    margin:0 0 34px;
+    padding-left:.4em;
+    font-size:12px;
+    letter-spacing:.42em;
+    color:var(--muted);
+  }
+
+  .title{
+    margin:0 0 20px;
+    padding-left:.1em;
+    font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+    font-size:clamp(34px,10vw,48px);
+    font-weight:600;
+    letter-spacing:.1em;
+    line-height:1.3;
+  }
+
+  .author{
+    margin:0 0 38px;
+    font-size:14px;
+    letter-spacing:.1em;
+    color:var(--muted);
+  }
+
+  .divider{
+    width:36px;
+    margin:0 auto 46px;
+    border:0;
+    border-top:1px solid var(--line);
+  }
+
+  .btn{
+    display:inline-block;
+    padding:14px 46px;
+    border-radius:999px;
+    background:var(--accent);
+    color:var(--on-accent);
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-decoration:none;
+    box-shadow:0 10px 26px -12px var(--accent);
+    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -12px var(--accent); opacity:.92; }
+  .btn:active{ transform:translateY(0); }
+
+  .tip{
+    margin:30px 0 0;
+    font-size:12px;
+    letter-spacing:.12em;
+    color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+  <main class="cover">
+    <p class="kicker">连载小说</p>
+    <h1 class="title">数组那些事儿</h1>
+    <p class="author">@雨^^</p>
+    <hr class="divider">
+    <a class="btn" href="ch1.html">开始阅读</a>
+    <p class="tip">持续更新中</p>
+  </main>
+
+</body>
+</html>

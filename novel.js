@@ -22,19 +22,19 @@
 
   /* ---------- 2. giscus 讨论区 ---------- */
   /* 在 https://giscus.app/zh-CN 按提示生成后，把四个值抄进来 */
-  var GISCUS = {
-    data-repo="ZHG1027/array-novel"
-        data-repo-id="R_kgDOUyUBFw"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOUyUBF84DGphq"
-    mapping: "pathname",
-    strict: "0",
-    reactionsEnabled: "1",
-    emitMetadata: "0",
-    inputPosition: "top",
-    lang: "zh-CN",
-    loading: "lazy"
-  };
+var GISCUS = {
+  repo: "ZHG1027/array-novel",
+  repoId: "R_kgDOUyUBFw",
+  category: "Announcements",
+  categoryId: "DIC_kwDOUyUBF84DGphq",
+  mapping: "pathname",
+  strict: "0",
+  reactionsEnabled: "1",
+  emitMetadata: "0",
+  inputPosition: "top",
+  lang: "zh-CN",
+  loading: "lazy"
+};
 
   /* ---------- 以下无需改动 ---------- */
 

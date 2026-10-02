@@ -212,3 +212,45 @@ body{
   .chapter{ padding-top:40px; }
   .chapter p{ font-size:15.5px; }
 }
+/* ---------- 章节导航 ---------- */
+.chapter-nav{
+  display:flex;
+  gap:6px;
+  padding:12px 0 12px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+
+.chapter-nav::-webkit-scrollbar{ display:none; }
+
+.chapter-nav-btn{
+  flex:none;
+  min-width:32px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 10px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.04em;
+  color:var(--muted);
+  text-decoration:none;
+  transition:background .2s ease,border-color .2s ease,color .2s ease;
+}
+
+.chapter-nav-btn:hover{
+  background:var(--panel);
+  border-color:var(--accent);
+  color:var(--text);
+}
+
+.chapter-nav-btn.active{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:var(--on-accent);
+  font-weight:600;
+}

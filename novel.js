@@ -9,7 +9,6 @@
   "use strict";
 
   /* ---------- 1. 章节目录 ---------- */
-  /* 新增一章：在数组末尾加一行，再复制一份 chN.html 改内容即可 */
   var CHAPTERS = [
     { file: "ch1.html", title: "数组那些事（一）" },
     { file: "ch2.html", title: "数组那些事（二）" },
@@ -21,20 +20,38 @@
   ];
 
   /* ---------- 2. giscus 讨论区 ---------- */
-  /* 在 https://giscus.app/zh-CN 按提示生成后，把四个值抄进来 */
-var GISCUS = {
-  repo: "ZHG1027/array-novel",
-  repoId: "R_kgDOUyUBFw",
-  category: "Announcements",
-  categoryId: "DIC_kwDOUyUBF84DGphq",
-  mapping: "pathname",
-  strict: "0",
-  reactionsEnabled: "1",
-  emitMetadata: "0",
-  inputPosition: "top",
-  lang: "zh-CN",
-  loading: "lazy"
-};
+  var GISCUS = {
+    repo: "ZHG1027/array-novel",
+    repoId: "R_kgDOUyUBFw",
+    category: "Announcements",
+    categoryId: "DIC_kwDOUyUBF84DGphq",
+    mapping: "pathname",
+    strict: "0",
+    reactionsEnabled: "1",
+    emitMetadata: "0",
+    inputPosition: "top",
+    lang: "zh-CN",
+    loading: "lazy"
+  };
+
+  /* ---------- 3. LaTeX 支持（MathJax） ---------- */
+  (function () {
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+    var mj = document.createElement("script");
+    mj.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
+    mj.async = true;
+    mj.id = "MathJax-script";
+    document.head.appendChild(mj);
+  })();
 
   /* ---------- 以下无需改动 ---------- */
 
@@ -45,10 +62,21 @@ var GISCUS = {
 
   var current = CHAPTERS[idx - 1];
 
-  /* 顶部：当前标题 + 阅读进度 */
+  /* 顶部：当前标题 + 阅读进度 + 章节导航 */
   var topbar = document.getElementById("topbar");
   if (topbar) {
     var pct = (idx / total * 100).toFixed(2);
+
+    var navHTML = '<nav class="chapter-nav" aria-label="章节导航">';
+    for (var i = 0; i < CHAPTERS.length; i++) {
+      var num = i + 1;
+      var cls = num === idx ? "chapter-nav-btn active" : "chapter-nav-btn";
+      navHTML +=
+        '<a class="' + cls + '" href="' + CHAPTERS[i].file + '" ' +
+        'title="' + CHAPTERS[i].title + '">' + num + "</a>";
+    }
+    navHTML += "</nav>";
+
     topbar.innerHTML =
       '<div class="topbar-inner">' +
         '<div class="topbar-row">' +
@@ -58,6 +86,7 @@ var GISCUS = {
         '<div class="progress-track">' +
           '<div class="progress-fill" style="width:' + pct + '%"></div>' +
         "</div>" +
+        navHTML +
       "</div>";
   }
 

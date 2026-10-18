@@ -16,7 +16,13 @@
     { file: "ch4.html", title: "数组那些事（四）" },
     { file: "ch5.html", title: "数组那些事（五）" },
     { file: "ch6.html", title: "数组那些事（六）" },
-    { file: "ch7.html", title: "数组那些事（七）" }
+    { file: "ch7.html", title: "数组那些事（七）" },
+    { file: "ch8.html", title: "数组那些事（八）" },
+    { file: "ch9.html", title: "数组那些事（九）" },
+    { file: "ch10.html", title: "数组那些事（十）" },
+    { file: "ch11.html", title: "数组那些事（十一）" },
+    { file: "ch12.html", title: "数组那些事（十二）" },
+    { file: "ch13.html", title: "数组那些事（十三）" }
   ];
 
   /* ---------- 2. giscus 讨论区 ---------- */
